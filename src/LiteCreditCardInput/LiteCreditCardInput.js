@@ -14,8 +14,6 @@ import Icons from "../Icons";
 import CCInput from "../CCInput";
 import { InjectedProps } from "../connectToState";
 
-const INFINITE_WIDTH = 1000;
-
 const s = StyleSheet.create({
   container: {
     paddingLeft: 10,
@@ -44,9 +42,6 @@ const s = StyleSheet.create({
   },
   last4: {
     justifyContent: "center",
-  },
-  numberInput: {
-    width: INFINITE_WIDTH,
   },
   expiryInput: {
     width: 80,
@@ -165,7 +160,6 @@ export default class LiteCreditCardInput extends Component {
         ]}>
           <CCInput
             {...this._inputProps("number")}
-            containerStyle={s.numberInput}
           />
         </View>
         {this._renderRightIcon()}
