@@ -14,8 +14,6 @@ import Icons from "../Icons";
 import CCInput from "../CCInput";
 import { InjectedProps } from "../connectToState";
 
-const INFINITE_WIDTH = 1000;
-
 const s = StyleSheet.create({
   container: {
     paddingLeft: 10,
@@ -46,7 +44,7 @@ const s = StyleSheet.create({
     justifyContent: "center",
   },
   numberInput: {
-    width: INFINITE_WIDTH,
+    width: 300
   },
   expiryInput: {
     width: 80,
@@ -55,8 +53,7 @@ const s = StyleSheet.create({
     width: 80,
   },
   last4Input: {
-    width: 60,
-    marginLeft: 20,
+    width: 70,
   },
   input: {
     height: 40,
