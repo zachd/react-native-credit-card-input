@@ -104,6 +104,12 @@ export default class LiteCreditCardInput extends Component {
 
   _focusNumber = () => this._focus("number");
   _focusExpiry = () => this._focus("expiry");
+  _blurCVC = () => this._blur("cvc");
+
+  _blur = field => {
+    if (!field) return;
+    this.refs[field].blur();
+  }
 
   _focus = field => {
     if (!field) return;
@@ -193,6 +199,7 @@ export default class LiteCreditCardInput extends Component {
           <CCInput
             {...this._inputProps("cvc")}
             containerStyle={s.cvcInput}
+            onBecomeValid={this._blurCVC}
           />
         </View>
       </View>
