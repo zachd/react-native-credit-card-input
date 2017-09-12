@@ -47,13 +47,13 @@ const s = StyleSheet.create({
     width: 300
   },
   expiryInput: {
-    width: 80,
+    width: 90,
   },
   cvcInput: {
-    width: 80,
+    width: 90,
   },
   last4Input: {
-    width: 70,
+    width: 80,
   },
   input: {
     height: 40,

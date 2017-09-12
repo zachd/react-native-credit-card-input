@@ -63,10 +63,6 @@ export default class CCInput extends Component {
 
   _onFocus = () => {
     this.props.onFocus(this.props.field);
-
-    if (this.props.value.length > 0) {
-      this.props.onChange(this.props.field, this.props.value.substring(0, this.props.value.length - 1));
-    }
   };
   _onChange = value => this.props.onChange(this.props.field, value);
   _onKeyPress = (eventData) => {
