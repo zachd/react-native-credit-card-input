@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
@@ -166,10 +167,9 @@ export default class LiteCreditCardInput extends Component {
           s.leftPart,
           showRightPart ? s.hidden : s.expanded,
         ]}>
-          <CCInput
-            {...this._inputProps("number")}
-            containerStyle={s.numberInput}
-          />
+          <CCInput {...this._inputProps("number")}
+              keyboardType="numeric"
+              containerStyle={s.numberInput} />
         </View>
         {this._renderRightIcon()}
 
@@ -177,30 +177,22 @@ export default class LiteCreditCardInput extends Component {
           s.rightPart,
           showRightPart ? s.expanded : s.hidden,
         ]}>
-          <TouchableOpacity
-            onPress={this._focusNumber}
-            style={s.last4}
-          >
-            <View
-              pointerEvents="none"
-            >
-              <CCInput
-                field="last4"
-                value={ numberStatus === "valid" ? number.substr(number.length - 4, 4) : "" }
-                inputStyle={[s.input, inputStyle]}
-                containerStyle={[s.last4Input]}
-              />
+          <TouchableOpacity onPress={this._focusNumber}
+              style={s.last4}>
+            <View pointerEvents={"none"}>
+              <CCInput field="last4"
+                  keyboardType="numeric"
+                  value={ numberStatus === "valid" ? number.substr(number.length - 4, 4) : "" }
+                  inputStyle={[s.input, inputStyle]}
+                  containerStyle={[s.last4Input]} />
             </View>
           </TouchableOpacity>
-          <CCInput
-            {...this._inputProps("expiry")}
-            containerStyle={s.expiryInput}
-          />
-          <CCInput
-            {...this._inputProps("cvc")}
-            containerStyle={s.cvcInput}
-            onBecomeValid={this._blurCVC}
-          />
+          <CCInput {...this._inputProps("expiry")}
+              keyboardType="numeric"
+              containerStyle={s.expiryInput} />
+          <CCInput {...this._inputProps("cvc")}
+              keyboardType="numeric"
+              containerStyle={s.cvcInput} />
         </View>
       </View>
     );
