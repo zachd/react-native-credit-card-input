@@ -44,9 +44,6 @@ const s = StyleSheet.create({
   last4: {
     justifyContent: "center",
   },
-  numberInput: {
-    width: 300
-  },
   expiryInput: {
     width: 90,
   },
@@ -168,8 +165,7 @@ export default class LiteCreditCardInput extends Component {
           showRightPart ? s.hidden : s.expanded,
         ]}>
           <CCInput {...this._inputProps("number")}
-              keyboardType="numeric"
-              containerStyle={s.numberInput} />
+              keyboardType="numeric" />
         </View>
         {this._renderRightIcon()}
 
@@ -192,7 +188,8 @@ export default class LiteCreditCardInput extends Component {
               containerStyle={s.expiryInput} />
           <CCInput {...this._inputProps("cvc")}
               keyboardType="numeric"
-              containerStyle={s.cvcInput} />
+              containerStyle={s.cvcInput}
+              onBecomeValid={this._blurCVC} />
         </View>
       </View>
     );
